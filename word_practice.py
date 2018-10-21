@@ -1,3 +1,5 @@
+import time
+
 def check(wrd, inp):
     if inp == wrd:
         return True
@@ -17,13 +19,17 @@ if __name__ == "__main__":
             if n <= 0:
                 raise ValueError
 
+            t_0 = time.time()  # count start time
             for i in range(0, n):
                 entry = str(input('entry: '))
                 if not check(word, entry):
                     f += 1
                     print('ooops!')
+
+            t = round(time.time() - t_0, 2)
+            report =  {'Number of trial ': n, 'Failure ': f, 'Time used ': t}
+
             print('')
-            report =  {'Number of trial ': n, 'Failure ': f}
             break
 
         except ValueError:
