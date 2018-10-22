@@ -20,6 +20,7 @@ if __name__ == "__main__":
                 raise ValueError
 
             t_0 = time.time()  # count start time
+
             for i in range(0, n):
                 entry = str(input('entry: '))
                 if not check(word, entry):
@@ -27,7 +28,9 @@ if __name__ == "__main__":
                     print('ooops!')
 
             t = round(time.time() - t_0, 2)
-            report =  {'Number of trial ': n, 'Failure ': f, 'Time used ': t}
+            accu = round((1 - f / n) * 100, 1)  # accuracy
+
+            report =  {'Number of trial ': n, 'Failure ': f, 'Accuracy': accu, 'Time used ': t}
 
             print('')
             break
