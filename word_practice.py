@@ -1,4 +1,5 @@
 import time
+import sys
 
 def check(wrd, inp):
     if inp == wrd:
@@ -9,10 +10,18 @@ def check(wrd, inp):
 
 if __name__ == "__main__":
     print('Welcome to this typing exercise.')
+    try:
+        word = sys.argv[1]
+        print('The text going to practice is {}'.format(word))
+    except IndexError or NameError:
+        ask_input = True
 
     while True:
         try:
-            word = str(input('Please type in the word you\'d like to practice: '))
+            if ask_input:
+                word = str(input('Please type in the word you\'d like to practice: '))
+                print('The text going to practice is {}'.format(word))
+
             n = int(input('the times of practice: '))
             f = 0  # failure
 
@@ -41,5 +50,6 @@ if __name__ == "__main__":
     for k, v in report.items():
         print('{}: {}'.format(k, v))
 
-    print('done!')
+    print('\ndone!')
+    exit()
 
