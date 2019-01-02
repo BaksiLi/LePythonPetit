@@ -1,5 +1,4 @@
-
-def convert_ascii(text, manual_return = False):
+def convert_ascii(text, manual_return=False):
     text_ascii = ''
 
     for i in text:
@@ -18,7 +17,8 @@ def convert_ascii(text, manual_return = False):
                 text_ascii += ' '
         text_ascii += ' '
 
-    return(text_ascii)
+    return (text_ascii)
+
 
 def select_mode(menu):
     while True:
@@ -35,9 +35,12 @@ def select_mode(menu):
             print('Invalid entry. Please try again.')
     return choice
 
+
 if __name__ == "__main__":
-    menu = {1: 'output as a line',
-            2: 'output with returns manually',}
+    menu = {
+        1: 'output as a line',
+        2: 'output with returns manually',
+    }
 
     text = str(input('Please enter your message: '))
     text_l = text.strip().split()  # obtain a list containing words
@@ -47,7 +50,8 @@ if __name__ == "__main__":
         print(convert_ascii(text_l))
 
     elif mode == 2:
-        print('''Press return to skip the current letter;
-                enter any words to add a return after the current letter.''')
-        print(convert_ascii(text_l, manual_return = True))
-
+        print(
+            'Press enter to skip the current letter;\n'
+            'Enter any keys to add a carriage return at the current position.'
+        )
+        print(convert_ascii(text_l, manual_return=True))
