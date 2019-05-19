@@ -129,4 +129,3 @@ if __name__ == '__main__':
     #plot_usage(data)
     plot_usage_two_scales(data)
 
-    # TODO: sum data in legend
