@@ -1,0 +1,2372 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    102509,       2364]
+NotebookOptionsPosition[    101602,       2338]
+NotebookOutlinePosition[    101978,       2355]
+CellTagsIndexPosition[    101935,       2352]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Data", "Section",
+ CellChangeTimes->{{3.761662783594228*^9, 
+  3.76166278486337*^9}},ExpressionUUID->"885ba252-7ebb-413b-a17d-\
+ac1804426188"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"persons", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<1616\>\"", ",", "\"\<1679\>\""}], "}"}], "]"}], ",", 
+       "\"\<T. Hobbes\>\""}], "]"}], ",", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<1564\>\"", ",", "\"\<1642\>\""}], "}"}], "]"}], ",", 
+       "\"\<G. Galilei\>\""}], "]"}], ",", 
+     RowBox[{"(*", 
+      RowBox[{
+       RowBox[{"Labeled", "[", 
+        RowBox[{
+         RowBox[{"Interval", "[", 
+          RowBox[{"{", 
+           RowBox[{"\"\<1564\>\"", ",", "\"\<1616\>\""}], "}"}], "]"}], ",", 
+         "\"\<W. Shakespeare\>\""}], "]"}], ","}], "*)"}], 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<1642\>\"", ",", "\"\<1726\>\""}], "}"}], "]"}], ",", 
+       "\"\<I. Newton\>\""}], "]"}], ",", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<1632\>\"", ",", "\"\<1704\>\""}], "}"}], "]"}], ",", 
+       "\"\<J. Locke\>\""}], "]"}], ",", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<1596\>\"", ",", "\"\<1650\>\""}], "}"}], "]"}], ",", 
+       "\"\<R. Descartes\>\""}], "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+       RowBox[{"Interval", "[", 
+        RowBox[{"{", 
+         RowBox[{"\"\<1561\>\"", ",", "\"\<1626\>\""}], "}"}], "]"}], ",", 
+       "\"\<F. Bacon\>\""}], "]"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"books", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Labeled", "[", 
+      RowBox[{"\"\<1651\>\"", ",", "\"\<Leviathan Published\>\""}], "]"}], 
+     ",", 
+     RowBox[{"Entity", "[", 
+      RowBox[{
+      "\"\<HistoricalEvent\>\"", ",", "\"\<MayflowerCompactSigned\>\""}], 
+      "]"}], ",", "\[IndentingNewLine]", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{
+      "\"\<1687\>\"", ",", "\"\<Principia Mathematica First Published\>\""}], 
+      "]"}]}], "}"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"events", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Entity", "[", 
+      RowBox[{"\"\<MilitaryConflict\>\"", ",", "\"\<EnglishCivilWar\>\""}], 
+      "]"}], ",", 
+     RowBox[{"Entity", "[", 
+      RowBox[{"\"\<HistoricalEvent\>\"", ",", "\"\<GloriousRevolution\>\""}], 
+      "]"}], ",", 
+     RowBox[{"Entity", "[", 
+      RowBox[{"\"\<HistoricalEvent\>\"", ",", "\"\<FrenchRevolution\>\""}], 
+      "]"}], ",", 
+     RowBox[{"Entity", "[", 
+      RowBox[{
+      "\"\<HistoricalEvent\>\"", ",", "\"\<ColumbusReachesNewWorld\>\""}], 
+      "]"}], ",", 
+     RowBox[{"Entity", "[", 
+      RowBox[{"\"\<HistoricalEvent\>\"", ",", "\"\<GreatLondonFire\>\""}], 
+      "]"}], ",", 
+     RowBox[{"Labeled", "[", 
+      RowBox[{"\"\<1600\>\"", ",", "\"\<East India Company Established\>\""}],
+       "]"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7609924519791813`*^9, 3.76099255487462*^9}, {
+  3.761662469478985*^9, 3.7616625701048517`*^9}, {3.7616627308333397`*^9, 
+  3.76166277085987*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"061a9096-1eca-4f8c-a17c-2fc88a5a866b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Timeline function", "Section",
+ CellChangeTimes->{{3.7616627919751167`*^9, 
+  3.761662795590119*^9}},ExpressionUUID->"212b6407-b965-4cba-bcd0-\
+36fccd036406"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Table", "[", 
+  RowBox[{
+   RowBox[{"TimelinePlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"persons", ",", "books", ",", "events"}], "}"}], ",", 
+     RowBox[{"AxesOrigin", "\[Rule]", "origin"}], ",", 
+     RowBox[{"Spacings", "\[Rule]", "Automatic"}], ",", 
+     RowBox[{"PlotLayout", "\[Rule]", "\"\<Vertical\>\""}], ",", 
+     RowBox[{"Filling", "\[Rule]", "Axis"}], ",", 
+     RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+     RowBox[{"PlotLegends", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Persons\>\"", ",", "\"\<Publications\>\"", ",", 
+        "\"\<Events\>\""}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<1490\>\"", ",", "\"\<1800\>\""}], "}"}]}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"origin", ",", 
+     RowBox[{"{", "Center", "}"}]}], "}"}]}], "]"}]], "Input",
+ CellLabel->"In[30]:=",ExpressionUUID->"4ab2462b-f6cb-4ef7-a834-25077ae0f156"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  TemplateBox[{GraphicsBox[{{
+       Opacity[0], 
+       AbsolutePointSize[0], 
+       PointBox[
+        NCache[{{
+           Rational[-443, 10], -3.1556736*^9}, {
+           
+           Rational[-1, 
+            2], -1.29383136*^10}}, {{-44.3, -3.1556736*^9}, {-0.5, \
+-1.29383136*^10}}]], 
+       PointBox[
+        NCache[{{
+           Rational[1, 2], -3.1556736*^9}, {
+           Rational[307, 10], -1.29383136*^10}}, {{0.5, -3.1556736*^9}, {
+         30.7, -1.29383136*^10}}]]}, {}, {{
+        Opacity[0], 
+        PointSize[0], 
+        PointBox[
+         NCache[{{
+            Rational[-443, 10], 1.31683577472*^10}, {-1, 
+           3160252800}}, {{-44.3, 1.31683577472*^10}, {-1, 3160252800}}]]}, {{
+        
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.560181, 0.691569, 0.194885], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 8121513600}, {-5, 
+                  7836480000}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {-5, 8121513600}], 
+                    Offset[{-1, 0}, {-5, 7836480000}]}, {
+                    Offset[{1, 0}, {-5, 8121513600}], 
+                    Offset[{1, 0}, {-5, 7836480000}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{-5, 8121513600}, {-5, 7836480000}}]}, 
+                    PointBox[{{-5, 8121513600}, {-5, 7836480000}}], 
+                    LineBox[{{-5, 8121513600}, {-5, 7836480000}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{-5, 8121513600}, {-5, 
+                    7836480000}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[
+                 NCache[{{
+                    Rational[-161, 5], 8121513600}, 
+                   Offset[{-3, 0}, {-5, 8121513600}]}, {{-32.2, 8121513600}, 
+                   Offset[{-3, 0}, {-5, 8121513600}]}]], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {
+                    Rational[-161, 5], 8121513600}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {
+                    Rational[-161, 5], 8121513600}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {
+                    Rational[-161, 5], 8121513600}]}, {
+                   Offset[{5.333333333333333, 0}, {-32.2, 8121513600}], 
+                   Offset[{-1.5, -5.333333333333333}, {-32.2, 8121513600}], 
+                   Offset[{-1.5, 5.333333333333333}, {-32.2, 8121513600}]}]], 
+                
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"English Civil War\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 NCache[
+                  Offset[{0, 0}, {
+                    Rational[-161, 5], 8121513600}], 
+                  Offset[{0, 0}, {-32.2, 8121513600}]], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-219, 5], 7.8037734528*^9}, {-43.8, 
+                  7.8037734528*^9}], 
+                 NCache[{
+                   Rational[-161, 5], 8.4392537472*^9}, {-32.2, 
+                  8.4392537472*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1642\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1642", ",", "8", ",", "22"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1651\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1651", ",", "9", ",", "3"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1642, 8, 22}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1651, 9, 3}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.560181, 0.691569, 0.194885], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 CapForm["Round"], 
+                 
+                 LineBox[{{0, 6690038400}, {-5, 
+                  6690038400}}]}}, {{}, {{{{}, {{{
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{-5, 6690038400}]}, 
+                    PointBox[{-5, 6690038400}]}}, {}, {}}, {}}, {{}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[
+                 NCache[{{
+                    Rational[-98, 5], 6690038400}, 
+                   Offset[{0, 0}, {-5, 6690038400}]}, {{-19.6, 6690038400}, 
+                   Offset[{0, 0}, {-5, 6690038400}]}]], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {
+                    Rational[-98, 5], 6690038400}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {
+                    Rational[-98, 5], 6690038400}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {
+                    Rational[-98, 5], 6690038400}]}, {
+                   Offset[{5.333333333333333, 0}, {-19.6, 6690038400}], 
+                   Offset[{-1.5, -5.333333333333333}, {-19.6, 6690038400}], 
+                   Offset[{-1.5, 5.333333333333333}, {-19.6, 6690038400}]}]], 
+                
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"Glorious Revolution\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 NCache[
+                  Offset[{0, 0}, {
+                    Rational[-98, 5], 6690038400}], 
+                  Offset[{0, 0}, {-19.6, 6690038400}]], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-156, 5], 6.3949939776*^9}, {-31.2, 
+                  6.3949939776*^9}], 
+                 NCache[{
+                   Rational[-98, 5], 6.9850828224*^9}, {-19.6, 
+                  6.9850828224*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1688\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1688", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Grid"], {}, StripOnInput -> False]], Annotation[#, 
+           Style[
+            Grid[{{
+               DateObject[{1688, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             Alignment -> Right], {}], "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.880722, 0.611041, 0.142051], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.880722, 0.611041, 0.142051], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 CapForm["Round"], 
+                 
+                 LineBox[{{0, 8807875200}, {-4, 
+                  8807875200}}]}}, {{}, {{{{}, {{{
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{-4, 8807875200}]}, 
+                    PointBox[{-4, 8807875200}]}}, {}, {}}, {}}, {{}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[
+                 NCache[{{
+                    Rational[-98, 5], 8807875200}, 
+                   Offset[{0, 0}, {-4, 8807875200}]}, {{-19.6, 8807875200}, 
+                   Offset[{0, 0}, {-4, 8807875200}]}]], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {
+                    Rational[-98, 5], 8807875200}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {
+                    Rational[-98, 5], 8807875200}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {
+                    Rational[-98, 5], 8807875200}]}, {
+                   Offset[{5.333333333333333, 0}, {-19.6, 8807875200}], 
+                   Offset[{-1.5, -5.333333333333333}, {-19.6, 8807875200}], 
+                   Offset[{-1.5, 5.333333333333333}, {-19.6, 8807875200}]}]], 
+                
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"Mayflower Compact is signed\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 NCache[
+                  Offset[{0, 0}, {
+                    Rational[-98, 5], 8807875200}], 
+                  Offset[{0, 0}, {-19.6, 8807875200}]], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-156, 5], 8.4901350528*^9}, {-31.2, 
+                  8.4901350528*^9}], 
+                 NCache[{
+                   Rational[-98, 5], 9.1256153472*^9}, {-19.6, 
+                  9.1256153472*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1620\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1620", ",", "11", ",", "21"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Grid"], {}, StripOnInput -> False]], Annotation[#, 
+           Style[
+            Grid[{{
+               DateObject[{1620, 11, 21}, "Day", "Gregorian", 0., {"Year"}]}},
+              Alignment -> Right], {}], "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.368417, 0.506779, 0.709798], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.24561133333333335`, 0.3378526666666667, 
+                  0.4731986666666667], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 8141644800}, {-3, 
+                  5490892800}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {-3, 8141644800}], 
+                    Offset[{-1, 0}, {-3, 5490892800}]}, {
+                    Offset[{1, 0}, {-3, 8141644800}], 
+                    Offset[{1, 0}, {-3, 5490892800}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{-3, 8141644800}, {-3, 5490892800}}]}, 
+                    PointBox[{{-3, 8141644800}, {-3, 5490892800}}], 
+                    LineBox[{{-3, 8141644800}, {-3, 5490892800}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{-3, 8141644800}, {-3, 
+                    5490892800}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[
+                 NCache[{{
+                    Rational[-98, 5], 8141644800}, 
+                   Offset[{-3, 0}, {-3, 8141644800}]}, {{-19.6, 8141644800}, 
+                   Offset[{-3, 0}, {-3, 8141644800}]}]], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {
+                    Rational[-98, 5], 8141644800}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {
+                    Rational[-98, 5], 8141644800}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {
+                    Rational[-98, 5], 8141644800}]}, {
+                   Offset[{5.333333333333333, 0}, {-19.6, 8141644800}], 
+                   Offset[{-1.5, -5.333333333333333}, {-19.6, 8141644800}], 
+                   Offset[{-1.5, 5.333333333333333}, {-19.6, 8141644800}]}]], 
+                
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"I. Newton\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 NCache[
+                  Offset[{0, 0}, {
+                    Rational[-98, 5], 8141644800}], 
+                  Offset[{0, 0}, {-19.6, 8141644800}]], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-156, 5], 7.8466003776*^9}, {-31.2, 
+                  7.8466003776*^9}], 
+                 NCache[{
+                   Rational[-98, 5], 8.4366892224*^9}, {-19.6, 
+                  8.4366892224*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1642\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1642", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1726\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1726", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1642, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1726, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.560181, 0.691569, 0.194885], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 CapForm["Round"], 
+                 
+                 LineBox[{{0, 12850617600}, {-5, 
+                  12850617600}}]}}, {{}, {{{{}, {{{
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{-5, 12850617600}]}, 
+                    PointBox[{-5, 12850617600}]}}, {}, {}}, {}}, {{}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{-7, 12850617600}, 
+                  Offset[{0, 0}, {-5, 12850617600}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {-7, 12850617600}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {-7, 12850617600}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {-7, 12850617600}]}, {
+                   Offset[{5.333333333333333, 0}, {-7, 12850617600}], 
+                   Offset[{-1.5, -5.333333333333333}, {-7, 12850617600}], 
+                   Offset[{-1.5, 5.333333333333333}, {-7, 12850617600}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox[
+                    "\"Christopher Columbus reaches the New World\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {-7, 12850617600}], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-93, 5], 1.25328774528*^10}, {-18.6, 
+                  1.25328774528*^10}], {-7, 1.31683577472*^10}]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1492\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1492", ",", "10", ",", "12"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Grid"], {}, StripOnInput -> False]], Annotation[#, 
+           Style[
+            Grid[{{
+               DateObject[{1492, 10, 12}, "Day", "Gregorian", 0., {"Year"}]}},
+              Alignment -> Right], {}], "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.880722, 0.611041, 0.142051], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.880722, 0.611041, 0.142051], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 CapForm["Round"], 
+                 
+                 LineBox[{{0, 6721574400}, {-4, 
+                  6721574400}}]}}, {{}, {{{{}, {{{
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{-4, 6721574400}]}, 
+                    PointBox[{-4, 6721574400}]}}, {}, {}}, {}}, {{}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{-7, 6721574400}, 
+                  Offset[{0, 0}, {-4, 6721574400}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {-7, 6721574400}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {-7, 6721574400}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {-7, 6721574400}]}, {
+                   Offset[{5.333333333333333, 0}, {-7, 6721574400}], 
+                   Offset[{-1.5, -5.333333333333333}, {-7, 6721574400}], 
+                   Offset[{-1.5, 5.333333333333333}, {-7, 6721574400}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"Principia Mathematica First Published\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {-7, 6721574400}], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-93, 5], 6.4038342528*^9}, {-18.6, 
+                  6.4038342528*^9}], {-7, 7.0393145472*^9}]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1687\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1687", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Grid"], {}, StripOnInput -> False]], Annotation[#, 
+           Style[
+            Grid[{{
+               DateObject[{1687, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             Alignment -> Right], {}], "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.368417, 0.506779, 0.709798], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.24561133333333335`, 0.3378526666666667, 
+                  0.4731986666666667], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 10697788800}, {-1, 
+                  8646566400}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {-1, 10697788800}], 
+                    Offset[{-1, 0}, {-1, 8646566400}]}, {
+                    Offset[{1, 0}, {-1, 10697788800}], 
+                    Offset[{1, 0}, {-1, 8646566400}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{-1, 10697788800}, {-1, 8646566400}}]}, 
+                    PointBox[{{-1, 10697788800}, {-1, 8646566400}}], 
+                    LineBox[{{-1, 10697788800}, {-1, 8646566400}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{-1, 10697788800}, {-1, 
+                    8646566400}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{-7, 10697788800}, 
+                  Offset[{-3, 0}, {-1, 10697788800}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {-7, 10697788800}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {-7, 10697788800}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {-7, 10697788800}]}, {
+                   Offset[{5.333333333333333, 0}, {-7, 10697788800}], 
+                   Offset[{-1.5, -5.333333333333333}, {-7, 10697788800}], 
+                   Offset[{-1.5, 5.333333333333333}, {-7, 10697788800}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"F. Bacon\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {-7, 10697788800}], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-93, 5], 1.04027443776*^10}, {-18.6, 
+                  1.04027443776*^10}], {-7, 1.09928332224*^10}]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1561\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1561", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1626\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1626", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1561, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1626, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.368417, 0.506779, 0.709798], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.24561133333333335`, 0.3378526666666667, 
+                  0.4731986666666667], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 9593337600}, {-2, 
+                  7889184000}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {-2, 9593337600}], 
+                    Offset[{-1, 0}, {-2, 7889184000}]}, {
+                    Offset[{1, 0}, {-2, 9593337600}], 
+                    Offset[{1, 0}, {-2, 7889184000}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{-2, 9593337600}, {-2, 7889184000}}]}, 
+                    PointBox[{{-2, 9593337600}, {-2, 7889184000}}], 
+                    LineBox[{{-2, 9593337600}, {-2, 7889184000}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{-2, 9593337600}, {-2, 
+                    7889184000}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{-7, 9593337600}, 
+                  Offset[{-3, 0}, {-2, 9593337600}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {-7, 9593337600}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {-7, 9593337600}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {-7, 9593337600}]}, {
+                   Offset[{5.333333333333333, 0}, {-7, 9593337600}], 
+                   Offset[{-1.5, -5.333333333333333}, {-7, 9593337600}], 
+                   Offset[{-1.5, 5.333333333333333}, {-7, 9593337600}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"R. Descartes\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {-7, 9593337600}], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-93, 5], 9.2982931776*^9}, {-18.6, 
+                  9.2982931776*^9}], {-7, 9.8883820224*^9}]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1596\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1596", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1650\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1650", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1596, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1650, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.368417, 0.506779, 0.709798], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.24561133333333335`, 0.3378526666666667, 
+                  0.4731986666666667], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 8457264000}, {-1, 
+                  6185203200}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {-1, 8457264000}], 
+                    Offset[{-1, 0}, {-1, 6185203200}]}, {
+                    Offset[{1, 0}, {-1, 8457264000}], 
+                    Offset[{1, 0}, {-1, 6185203200}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{-1, 8457264000}, {-1, 6185203200}}]}, 
+                    PointBox[{{-1, 8457264000}, {-1, 6185203200}}], 
+                    LineBox[{{-1, 8457264000}, {-1, 6185203200}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{-1, 8457264000}, {-1, 
+                    6185203200}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{-7, 8457264000}, 
+                  Offset[{-3, 0}, {-1, 8457264000}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[16, 3], 0}, {-7, 8457264000}], 
+                   Offset[{-1.5, 
+                    Rational[-16, 3]}, {-7, 8457264000}], 
+                   Offset[{-1.5, 
+                    Rational[16, 3]}, {-7, 8457264000}]}, {
+                   Offset[{5.333333333333333, 0}, {-7, 8457264000}], 
+                   Offset[{-1.5, -5.333333333333333}, {-7, 8457264000}], 
+                   Offset[{-1.5, 5.333333333333333}, {-7, 8457264000}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"J. Locke\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {-7, 8457264000}], Right, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[-93, 5], 8.1622195776*^9}, {-18.6, 
+                  8.1622195776*^9}], {-7, 8.7523084224*^9}]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1632\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1632", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1704\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1704", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1632, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1704, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}}, {{{{}, {}, {}, {}}, {}}, {{{}, {}}, {}}, {{{}, \
+{}, {}}, {}}}}, {}, {{
+        Opacity[0], 
+        PointSize[0], 
+        PointBox[
+         NCache[{{1, 1.31683577472*^10}, {
+            Rational[307, 10], 3160252800}}, {{1, 1.31683577472*^10}, {
+           30.7, 3160252800}}]]}, {{
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.560181, 0.691569, 0.194885], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 CapForm["Round"], 
+                 LineBox[{{0, 9467107200}, {4, 9467107200}}]}}, {{}, {{{{}, {{{
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{4, 9467107200}]}, 
+                    PointBox[{4, 9467107200}]}}, {}, {}}, {}}, {{}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[
+                 NCache[{{
+                    Rational[93, 5], 9467107200}, 
+                   Offset[{0, 0}, {4, 9467107200}]}, {{18.6, 9467107200}, 
+                   Offset[{0, 0}, {4, 9467107200}]}]], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[-16, 3], 0}, {
+                    Rational[93, 5], 9467107200}], 
+                   Offset[{1.5, 
+                    Rational[16, 3]}, {
+                    Rational[93, 5], 9467107200}], 
+                   Offset[{1.5, 
+                    Rational[-16, 3]}, {
+                    Rational[93, 5], 9467107200}]}, {
+                   Offset[{-5.333333333333333, 0}, {18.6, 9467107200}], 
+                   Offset[{1.5, 5.333333333333333}, {18.6, 9467107200}], 
+                   Offset[{1.5, -5.333333333333333}, {18.6, 9467107200}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"East India Company Established\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 NCache[
+                  Offset[{0, 0}, {
+                    Rational[93, 5], 9467107200}], 
+                  Offset[{0, 0}, {18.6, 9467107200}]], Left, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[93, 5], 9.1493670528*^9}, {18.6, 
+                  9.1493670528*^9}], 
+                 NCache[{
+                   Rational[151, 5], 9.7848473472*^9}, {30.2, 
+                  9.7848473472*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1600\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1600", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Grid"], {}, StripOnInput -> False]], Annotation[#, 
+           Style[
+            Grid[{{
+               DateObject[{1600, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             Alignment -> Right], {}], "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.560181, 0.691569, 0.194885], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 7363180800}, {4, 
+                  7362921600}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {4, 7363180800}], 
+                    Offset[{-1, 0}, {4, 7362921600}]}, {
+                    Offset[{1, 0}, {4, 7363180800}], 
+                    Offset[{1, 0}, {4, 7362921600}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{4, 7363180800}, {4, 7362921600}}]}, 
+                    PointBox[{{4, 7363180800}, {4, 7362921600}}], 
+                    LineBox[{{4, 7363180800}, {4, 7362921600}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{4, 7363180800}, {4, 
+                    7362921600}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[
+                 NCache[{{
+                    Rational[93, 5], 7363180800}, 
+                   Offset[{3, 0}, {4, 7363180800}]}, {{18.6, 7363180800}, 
+                   Offset[{3, 0}, {4, 7363180800}]}]], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[-16, 3], 0}, {
+                    Rational[93, 5], 7363180800}], 
+                   Offset[{1.5, 
+                    Rational[16, 3]}, {
+                    Rational[93, 5], 7363180800}], 
+                   Offset[{1.5, 
+                    Rational[-16, 3]}, {
+                    Rational[93, 5], 7363180800}]}, {
+                   Offset[{-5.333333333333333, 0}, {18.6, 7363180800}], 
+                   Offset[{1.5, 5.333333333333333}, {18.6, 7363180800}], 
+                   Offset[{1.5, -5.333333333333333}, {18.6, 7363180800}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"Great London Fire\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 NCache[
+                  Offset[{0, 0}, {
+                    Rational[93, 5], 7363180800}], 
+                  Offset[{0, 0}, {18.6, 7363180800}]], Left, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[
+                 NCache[{
+                   Rational[93, 5], 7.0681363776*^9}, {18.6, 
+                  7.0681363776*^9}], 
+                 NCache[{
+                   Rational[151, 5], 7.6582252224*^9}, {30.2, 
+                  7.6582252224*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1666\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1666", ",", "9", ",", "2"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1666\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1666", ",", "9", ",", "5"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1666, 9, 2}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1666, 9, 5}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.560181, 0.691569, 0.194885], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.560181, 0.691569, 0.194885], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 3492374400}, {4, 
+                  3160252800}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {4, 3492374400}], 
+                    Offset[{-1, 0}, {4, 3160252800}]}, {
+                    Offset[{1, 0}, {4, 3492374400}], 
+                    Offset[{1, 0}, {4, 3160252800}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{4, 3492374400}, {4, 3160252800}}]}, 
+                    PointBox[{{4, 3492374400}, {4, 3160252800}}], 
+                    LineBox[{{4, 3492374400}, {4, 3160252800}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{4, 3492374400}, {4, 
+                    3160252800}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{6, 3492374400}, 
+                  Offset[{3, 0}, {4, 3492374400}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[-16, 3], 0}, {6, 3492374400}], 
+                   Offset[{1.5, 
+                    Rational[16, 3]}, {6, 3492374400}], 
+                   Offset[{1.5, 
+                    Rational[-16, 3]}, {6, 3492374400}]}, {
+                   Offset[{-5.333333333333333, 0}, {6, 3492374400}], 
+                   Offset[{1.5, 5.333333333333333}, {6, 3492374400}], 
+                   Offset[{1.5, -5.333333333333333}, {6, 3492374400}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"French Revolution\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {6, 3492374400}], Left, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[{6, 3.1973299776*^9}, 
+                 NCache[{
+                   Rational[88, 5], 3.7874188224*^9}, {17.6, 
+                  3.7874188224*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1789\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1789", ",", "5", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1799\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1799", ",", "11", ",", "9"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1789, 5, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1799, 11, 9}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.880722, 0.611041, 0.142051], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.880722, 0.611041, 0.142051], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 CapForm["Round"], 
+                 LineBox[{{0, 7857648000}, {3, 7857648000}}]}}, {{}, {{{{}, {{{
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{3, 7857648000}]}, 
+                    PointBox[{3, 7857648000}]}}, {}, {}}, {}}, {{}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{6, 7857648000}, 
+                  Offset[{0, 0}, {3, 7857648000}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[-16, 3], 0}, {6, 7857648000}], 
+                   Offset[{1.5, 
+                    Rational[16, 3]}, {6, 7857648000}], 
+                   Offset[{1.5, 
+                    Rational[-16, 3]}, {6, 7857648000}]}, {
+                   Offset[{-5.333333333333333, 0}, {6, 7857648000}], 
+                   Offset[{1.5, 5.333333333333333}, {6, 7857648000}], 
+                   Offset[{1.5, -5.333333333333333}, {6, 7857648000}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"Leviathan Published\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {6, 7857648000}], Left, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[{6, 7.5626035776*^9}, 
+                 NCache[{
+                   Rational[88, 5], 8.1526924224*^9}, {17.6, 
+                  8.1526924224*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1651\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1651", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Right}}}, AutoDelete -> 
+              False, GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}], 
+             "Grid"], {}, StripOnInput -> False]], Annotation[#, 
+           Style[
+            Grid[{{
+               DateObject[{1651, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             Alignment -> Right], {}], "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.368417, 0.506779, 0.709798], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.24561133333333335`, 0.3378526666666667, 
+                  0.4731986666666667], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 10603180800}, {1, 
+                  8141644800}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {1, 10603180800}], 
+                    Offset[{-1, 0}, {1, 8141644800}]}, {
+                    Offset[{1, 0}, {1, 10603180800}], 
+                    Offset[{1, 0}, {1, 8141644800}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{1, 10603180800}, {1, 8141644800}}]}, 
+                    PointBox[{{1, 10603180800}, {1, 8141644800}}], 
+                    LineBox[{{1, 10603180800}, {1, 8141644800}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{1, 10603180800}, {1, 
+                    8141644800}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{6, 10603180800}, 
+                  Offset[{3, 0}, {1, 10603180800}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[-16, 3], 0}, {6, 10603180800}], 
+                   Offset[{1.5, 
+                    Rational[16, 3]}, {6, 10603180800}], 
+                   Offset[{1.5, 
+                    Rational[-16, 3]}, {6, 10603180800}]}, {
+                   Offset[{-5.333333333333333, 0}, {6, 10603180800}], 
+                   Offset[{1.5, 5.333333333333333}, {6, 10603180800}], 
+                   Offset[{1.5, -5.333333333333333}, {6, 10603180800}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"G. Galilei\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {6, 10603180800}], Left, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[{6, 1.03081363776*^10}, 
+                 NCache[{
+                   Rational[88, 5], 1.08982252224*^10}, {17.6, 
+                  1.08982252224*^10}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1564\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1564", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1642\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1642", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1564, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1642, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}, {
+         Directive[
+          AbsolutePointSize[7], 
+          RGBColor[0.368417, 0.506779, 0.709798], 
+          AbsoluteThickness[1.6], 
+          Opacity[1]], 
+         TagBox[
+          TooltipBox[
+           DynamicBox[{
+             FEPrivate`If[
+              CurrentValue["MouseOver"], 
+              Directive[
+               EdgeForm[
+                Directive[
+                 RGBColor[0.368417, 0.506779, 0.709798], 
+                 Thickness[Large], 
+                 Opacity[0.2]]], 
+               FaceForm[{
+                 RGBColor[
+                 0.24561133333333335`, 0.3378526666666667, 
+                  0.4731986666666667], 
+                 Opacity[1]}], 
+               CapForm["Round"], 
+               AbsoluteThickness[2.5], 
+               AbsolutePointSize[10], 
+               FrameBoxOptions -> {BoxFrame -> 2.5}], {}, {}], {{{
+                Directive[
+                 Opacity[0.2]], {
+                 Directive[
+                  Opacity[0.2]], 
+                 EdgeForm[], 
+                 
+                 RectangleBox[{0, 8962185600}, {2, 
+                  6974035200}]}}, {{}, {{{{}, {{{
+                    GrayLevel[1], 
+                    AbsoluteThickness[2], 
+                    LineBox[{{
+                    Offset[{-1, 0}, {2, 8962185600}], 
+                    Offset[{-1, 0}, {2, 6974035200}]}, {
+                    Offset[{1, 0}, {2, 8962185600}], 
+                    Offset[{1, 0}, {2, 6974035200}]}}]}, {
+                    AbsolutePointSize[10], 
+                    GrayLevel[1], 
+                    PointBox[{{2, 8962185600}, {2, 6974035200}}]}, 
+                    PointBox[{{2, 8962185600}, {2, 6974035200}}], 
+                    LineBox[{{2, 8962185600}, {2, 6974035200}}]}}, {}, {{
+                    AbsolutePointSize[4], 
+                    GrayLevel[1], 
+                    
+                    PointBox[{{2, 8962185600}, {2, 
+                    6974035200}}]}}}, {}}, {{}, {}}}}}, {{
+                CapForm["Butt"], 
+                LineBox[{{6, 8962185600}, 
+                  Offset[{3, 0}, {2, 8962185600}]}], 
+                PolygonBox[
+                 NCache[{
+                   Offset[{
+                    Rational[-16, 3], 0}, {6, 8962185600}], 
+                   Offset[{1.5, 
+                    Rational[16, 3]}, {6, 8962185600}], 
+                   Offset[{1.5, 
+                    Rational[-16, 3]}, {6, 8962185600}]}, {
+                   Offset[{-5.333333333333333, 0}, {6, 8962185600}], 
+                   Offset[{1.5, 5.333333333333333}, {6, 8962185600}], 
+                   Offset[{1.5, -5.333333333333333}, {6, 8962185600}]}]], 
+                InsetBox[
+                 BoxData[
+                  FormBox[
+                   FrameBox[
+                    StyleBox["\"T. Hobbes\"", {
+                    GrayLevel[0.3]}, StripOnInput -> False], RoundingRadius -> 
+                    5, FrameMargins -> 5, Background -> GrayLevel[1], 
+                    StripOnInput -> False], TraditionalForm]], 
+                 Offset[{0, 0}, {6, 8962185600}], Left, {
+                 Automatic, Automatic}]}, {
+                EdgeForm[], 
+                FaceForm[], 
+                RectangleBox[{6, 8.6671411776*^9}, 
+                 NCache[{
+                   Rational[88, 5], 9.2572300224*^9}, {17.6, 
+                  9.2572300224*^9}]]}}}}], 
+           StyleBox[
+            TagBox[
+             GridBox[{{"\"start: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1616\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1616", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}, {"\"end: \"", 
+                TemplateBox[{
+                  RowBox[{
+                    StyleBox[
+                    "\"Day: \"", FontColor -> GrayLevel[0.5], FontWeight -> 
+                    Plain], "\"1679\""}], 
+                  RowBox[{"DateObject", "[", 
+                    RowBox[{
+                    RowBox[{"{", 
+                    RowBox[{"1679", ",", "1", ",", "1"}], "}"}], ",", 
+                    "\"Day\"", ",", "\"Gregorian\"", ",", "0.`", ",", 
+                    RowBox[{"{", "\"Year\"", "}"}]}], "]"}]}, "DateObject", 
+                 Editable -> False]}}, RowSpacings -> 1, ColumnSpacings -> 0, 
+              RowAlignments -> Baseline, ColumnAlignments -> Right], 
+             Function[BoxForm`e$, 
+              TableForm[
+              BoxForm`e$, TableAlignments -> Right, 
+               TableSpacing -> {1, 0}]]], {}, StripOnInput -> False]], 
+          Annotation[#, 
+           Style[
+            TableForm[{{"start: ", 
+               DateObject[{1616, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}, {
+              "end: ", 
+               DateObject[{1679, 1, 1}, "Day", "Gregorian", 0., {"Year"}]}}, 
+             TableAlignments -> Right, TableSpacing -> {1, 0}], {}], 
+           "Tooltip"]& ]}}, {{{{}, {}}, {}}, {{{}}, {}}, {{{}, {}, {}}, \
+{}}}}}, PlotRange -> {{All, All}, {3.1556736*^9, 1.29383136*^10}}, 
+     ImagePadding -> All, PlotRangePadding -> {{
+        Scaled[0.05], 
+        Scaled[0.05]}, {
+        Scaled[0.06], 
+        Scaled[0.06]}}, AspectRatio -> NCache[
+       Rational[1, 2], 0.5], Axes -> {False, True}, 
+     Frame -> {{None, None}, {None, None}}, 
+     FrameTicks -> {{Automatic, Automatic}, {None, None}}, 
+     Ticks -> {None, {{1.57784544*^10, 
+         FormBox["\"1400\"", TraditionalForm], {0.004, 0}}, {1.26227808*^10, 
+         FormBox["\"1500\"", TraditionalForm], {0.004, 0}}, {9.4671072*^9, 
+         FormBox["\"1600\"", TraditionalForm], {0.004, 0}}, {6.3113472*^9, 
+         FormBox["\"1700\"", TraditionalForm], {0.004, 0}}, {3.1556736*^9, 
+         FormBox["\"1800\"", TraditionalForm], {0.004, 0}}, {0., 
+         FormBox["\"1900\"", TraditionalForm], {0.004, 0}}, {-3.1556736*^9, 
+         FormBox["\"2000\"", TraditionalForm], {0.004, 0}}, {-6.3114336*^9, 
+         FormBox["\"2100\"", TraditionalForm], {0.004, 0}}, {1.57784544*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.51473888*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.45162368*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.38850848*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.32539328*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.26227808*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.19917152*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.13605632*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.07294112*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.00982592*^10, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        9.4671072*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        8.8359552*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        8.2048032*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        7.5736512*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        6.9424992*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        6.3113472*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        5.6802816*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        5.0491296*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        4.4179776*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        3.7868256*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        3.1556736*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        2.524608*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.893456*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        1.262304*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        6.31152*^8, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}, {
+        0., 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {
+         0.004, 0}}, {-6.310656*^8, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {
+         0.004, 0}}, {-1.2622176*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {
+         0.004, 0}}, {-1.8933696*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {
+         0.004, 0}}, {-2.5245216*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {
+         0.004, 0}}, {-3.1556736*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {
+         0.004, 0}}, {-3.7868256*^9, 
+         FormBox[
+          TemplateBox[{0, 0}, "Spacer2"], TraditionalForm], {0.004, 0}}}}, 
+     AxesOrigin -> {0, 0}, {
+     Axes -> Automatic, AxesOrigin -> Center, 
+      GridLines -> {{-3, -4, -5, 2, 3, 4}, (Transpose[{#, 
+          Table[
+           GrayLevel[0.8], {
+            Length[#]}]}]& )[
+         Part[
+          Select[
+           (Charting`getDateTicks[
+            Charting`FindTicks[{-1, 0}, {1, 0}][Automatic], {"Year"}, 
+            (Map[DateList, -Reverse[{
+                SlotSequence[1]}]]& )[
+             SlotSequence[1]], {{
+              Scaled[0.05], 
+              Scaled[0.05]}, {
+              Scaled[0.06], 
+              Scaled[0.06]}}, 6, {{0.006, 0}, {0.003, 0}}, Automatic]& )[
+            SlotSequence[1]], And[
+            FreeQ[#, 
+             Alternatives["", 
+              Spacer[{0, 0}]]], Head[#] === List, Length[#] > 0]& ], All, 
+          1]]& }, ImageSize -> {Automatic, 500}, 
+      PlotRange -> {"1490", "1800"}}],FormBox[
+     FormBox[
+      TemplateBox[{"\"Persons\"", "\"Publications\"", "\"Events\""}, 
+       "LineLegend", DisplayFunction -> (FormBox[
+         StyleBox[
+          StyleBox[
+           PaneBox[
+            TagBox[
+             GridBox[{{
+                TagBox[
+                 GridBox[{{
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsolutePointSize[7], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6], 
+                    Opacity[1]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsolutePointSize[7], 
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    AbsoluteThickness[1.6], 
+                    Opacity[1]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #}, {
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsolutePointSize[7], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6], 
+                    Opacity[1]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsolutePointSize[7], 
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    AbsoluteThickness[1.6], 
+                    Opacity[1]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #2}, {
+                    GraphicsBox[{{
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsolutePointSize[7], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6], 
+                    Opacity[1]], {
+                    LineBox[{{0, 10}, {20, 10}}]}}, {
+                    Directive[
+                    EdgeForm[
+                    Directive[
+                    Opacity[0.3], 
+                    GrayLevel[0]]], 
+                    PointSize[0.5], 
+                    AbsolutePointSize[7], 
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    AbsoluteThickness[1.6], 
+                    Opacity[1]], {}}}, AspectRatio -> Full, 
+                    ImageSize -> {20, 10}, PlotRangePadding -> None, 
+                    ImagePadding -> Automatic, 
+                    BaselinePosition -> (Scaled[0.1] -> Baseline)], #3}}, 
+                  GridBoxAlignment -> {
+                   "Columns" -> {Center, Left}, "Rows" -> {{Baseline}}}, 
+                  AutoDelete -> False, 
+                  GridBoxDividers -> {
+                   "Columns" -> {{False}}, "Rows" -> {{False}}}, 
+                  GridBoxItemSize -> {
+                   "Columns" -> {{All}}, "Rows" -> {{All}}}, 
+                  GridBoxSpacings -> {
+                   "Columns" -> {{0.5}}, "Rows" -> {{0.8}}}], "Grid"]}}, 
+              GridBoxAlignment -> {"Columns" -> {{Left}}, "Rows" -> {{Top}}}, 
+              AutoDelete -> False, 
+              GridBoxItemSize -> {
+               "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, 
+              GridBoxSpacings -> {"Columns" -> {{1}}, "Rows" -> {{0}}}], 
+             "Grid"], Alignment -> Left, AppearanceElements -> None, 
+            ImageMargins -> {{5, 5}, {5, 5}}, ImageSizeAction -> 
+            "ResizeToFit"], LineIndent -> 0, StripOnInput -> False], {
+           GrayLevel[0.3], FontFamily -> "Arial"}, Background -> Automatic, 
+          StripOnInput -> False], TraditionalForm]& ), 
+       InterpretationFunction :> (RowBox[{"LineLegend", "[", 
+          RowBox[{
+            RowBox[{"{", 
+              RowBox[{
+                RowBox[{"Directive", "[", 
+                  RowBox[{
+                    RowBox[{"AbsolutePointSize", "[", "7", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.368417, 0.506779, 0.709798], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.24561133333333335`, 0.3378526666666667, 
+                    0.4731986666666667], FrameTicks -> None, PlotRangePadding -> 
+                    None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.368417`", ",", "0.506779`", ",", "0.709798`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.368417, 0.506779, 0.709798]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.368417, 0.506779, 0.709798], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
+                    RowBox[{"Opacity", "[", "1", "]"}]}], "]"}], ",", 
+                RowBox[{"Directive", "[", 
+                  RowBox[{
+                    RowBox[{"AbsolutePointSize", "[", "7", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.880722, 0.611041, 0.142051], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.587148, 0.40736066666666665`, 0.09470066666666668], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.880722`", ",", "0.611041`", ",", "0.142051`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.880722, 0.611041, 0.142051]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.880722, 0.611041, 0.142051], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
+                    RowBox[{"Opacity", "[", "1", "]"}]}], "]"}], ",", 
+                RowBox[{"Directive", "[", 
+                  RowBox[{
+                    RowBox[{"AbsolutePointSize", "[", "7", "]"}], ",", 
+                    InterpretationBox[
+                    ButtonBox[
+                    TooltipBox[
+                    GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    RGBColor[0.560181, 0.691569, 0.194885], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> 
+                    RGBColor[
+                    0.37345400000000006`, 0.461046, 0.12992333333333334`], 
+                    FrameTicks -> None, PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                    StyleBox[
+                    RowBox[{"RGBColor", "[", 
+                    RowBox[{"0.560181`", ",", "0.691569`", ",", "0.194885`"}],
+                     "]"}], NumberMarks -> False]], Appearance -> None, 
+                    BaseStyle -> {}, BaselinePosition -> Baseline, 
+                    DefaultBaseStyle -> {}, ButtonFunction :> 
+                    With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    RGBColor[0.560181, 0.691569, 0.194885]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["RGBColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                    Automatic, Method -> "Preemptive"], 
+                    RGBColor[0.560181, 0.691569, 0.194885], Editable -> False,
+                     Selectable -> False], ",", 
+                    RowBox[{"AbsoluteThickness", "[", "1.6`", "]"}], ",", 
+                    RowBox[{"Opacity", "[", "1", "]"}]}], "]"}]}], "}"}], ",", 
+            RowBox[{"{", 
+              RowBox[{#, ",", #2, ",", #3}], "}"}], ",", 
+            RowBox[{"LegendMarkers", "\[Rule]", 
+              RowBox[{"{", 
+                RowBox[{
+                  RowBox[{"{", 
+                    RowBox[{"None", ",", "Automatic"}], "}"}], ",", 
+                  RowBox[{"{", 
+                    RowBox[{"None", ",", "Automatic"}], "}"}], ",", 
+                  RowBox[{"{", 
+                    RowBox[{"None", ",", "Automatic"}], "}"}]}], "}"}]}], ",", 
+            RowBox[{"Joined", "\[Rule]", 
+              RowBox[{"{", 
+                RowBox[{"True", ",", "True", ",", "True"}], "}"}]}], ",", 
+            RowBox[{"LabelStyle", "\[Rule]", 
+              RowBox[{"{", 
+                InterpretationBox[
+                 ButtonBox[
+                  TooltipBox[
+                   GraphicsBox[{{
+                    GrayLevel[0], 
+                    RectangleBox[{0, 0}]}, {
+                    GrayLevel[0], 
+                    RectangleBox[{1, -1}]}, {
+                    GrayLevel[0.3], 
+                    RectangleBox[{0, -1}, {2, 1}]}}, DefaultBaseStyle -> 
+                    "ColorSwatchGraphics", AspectRatio -> 1, Frame -> True, 
+                    FrameStyle -> GrayLevel[0.2], FrameTicks -> None, 
+                    PlotRangePadding -> None, ImageSize -> 
+                    Dynamic[{
+                    Automatic, 1.35 CurrentValue["FontCapHeight"]/
+                    AbsoluteCurrentValue[Magnification]}]], 
+                   StyleBox[
+                    RowBox[{"GrayLevel", "[", "0.3`", "]"}], NumberMarks -> 
+                    False]], Appearance -> None, BaseStyle -> {}, 
+                  BaselinePosition -> Baseline, DefaultBaseStyle -> {}, 
+                  ButtonFunction :> With[{Typeset`box$ = EvaluationBox[]}, 
+                    If[
+                    Not[
+                    AbsoluteCurrentValue["Deployed"]], 
+                    SelectionMove[Typeset`box$, All, Expression]; 
+                    FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+                    FrontEnd`Private`$ColorSelectorInitialColor = 
+                    GrayLevel[0.3]; 
+                    FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+                    MathLink`CallFrontEnd[
+                    FrontEnd`AttachCell[Typeset`box$, 
+                    FrontEndResource["GrayLevelColorValueSelector"], {
+                    0, {Left, Bottom}}, {Left, Top}, 
+                    "ClosingActions" -> {
+                    "SelectionDeparture", "ParentChanged", 
+                    "EvaluatorQuit"}]]]], BaseStyle -> Inherited, Evaluator -> 
+                  Automatic, Method -> "Preemptive"], 
+                 GrayLevel[0.3], Editable -> False, Selectable -> False], 
+                "}"}]}], ",", 
+            RowBox[{"LegendLayout", "\[Rule]", "\"Column\""}]}], "]"}]& ), 
+       Editable -> True], TraditionalForm], TraditionalForm]},
+   "Legended",
+   DisplayFunction->(GridBox[{{
+       TagBox[
+        ItemBox[
+         PaneBox[
+          TagBox[#, "SkipImageSizeLevel"], Alignment -> {Center, Baseline}, 
+          BaselinePosition -> Baseline], DefaultBaseStyle -> "Labeled"], 
+        "SkipImageSizeLevel"], 
+       ItemBox[#2, DefaultBaseStyle -> "LabeledLabel"]}}, 
+     GridBoxAlignment -> {"Columns" -> {{Center}}, "Rows" -> {{Center}}}, 
+     AutoDelete -> False, GridBoxItemSize -> Automatic, 
+     BaselinePosition -> {1, 1}]& ),
+   Editable->True,
+   InterpretationFunction->(RowBox[{"Legended", "[", 
+      RowBox[{#, ",", 
+        RowBox[{"Placed", "[", 
+          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )], "}"}]], "Output",
+ CellChangeTimes->{3.761662750802359*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"14d23134-bcb7-4b73-a388-0301e01d5bab"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(*", 
+  RowBox[{
+   RowBox[{"TODO", ":", " ", 
+    RowBox[{
+    "Stylize", " ", "multiple", " ", "events", " ", "on", " ", "the", " ", 
+     "same", " ", "year"}]}], ";", " ", 
+   RowBox[{"Label", " ", "year", " ", "aside", " ", "names"}]}], 
+  "*)"}]], "Input",
+ CellChangeTimes->{{3.761662676417717*^9, 
+  3.761662717932235*^9}},ExpressionUUID->"72d1510f-0ae7-4efe-a003-\
+705b4df020cb"]
+}, Open  ]]
+},
+WindowSize->{808, 755},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+WindowStatusArea->None,
+FrontEndVersion->"11.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (March 5, \
+2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 148, 3, 67, "Section",ExpressionUUID->"885ba252-7ebb-413b-a17d-ac1804426188"],
+Cell[731, 27, 3330, 90, 346, "Input",ExpressionUUID->"061a9096-1eca-4f8c-a17c-2fc88a5a866b"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4098, 122, 164, 3, 67, "Section",ExpressionUUID->"212b6407-b965-4cba-bcd0-36fccd036406"],
+Cell[CellGroupData[{
+Cell[4287, 129, 973, 23, 94, "Input",ExpressionUUID->"4ab2462b-f6cb-4ef7-a834-25077ae0f156"],
+Cell[5263, 154, 95896, 2167, 519, "Output",ExpressionUUID->"14d23134-bcb7-4b73-a388-0301e01d5bab"]
+}, Open  ]],
+Cell[101174, 2324, 412, 11, 30, "Input",ExpressionUUID->"72d1510f-0ae7-4efe-a003-705b4df020cb"]
+}, Open  ]]
+}
+]
+*)
+

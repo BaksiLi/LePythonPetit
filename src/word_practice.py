@@ -2,18 +2,12 @@ import sys
 import time
 
 
-def check(wrd, inp):
-    '''
-    check if user's input agree with the word.
-    '''
-    if inp == wrd:
-        return True
-
-
 def analysis(failure: list, n: int):
     # TODO: use the Levenshtein Algorithm, since they may differ in length as
     # well (Hamming distance not applicable)
     print('Feature not completed so far.')
+
+    # returns a coloured text with colour showing their failure frequencies.
 
 
 if __name__ == "__main__":
@@ -31,7 +25,7 @@ if __name__ == "__main__":
         try:
             if ask_input:
                 word = str(
-                    input('Please type in the word you\'d like to practice: ')
+                    input("Please type in the word you'd like to practice: ")
                 )
                 print('The text going to practice is {}'.format(word))
 
@@ -45,7 +39,7 @@ if __name__ == "__main__":
 
             for i in range(0, n):
                 entry = str(input('entry: '))
-                if not check(word, entry):
+                if word != entry:
                     invalid_entries.append(entry)
                     print('ooops!')
 
