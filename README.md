@@ -1,5 +1,5 @@
-# petit
-This is a growing collection of my small programmes.
+# LePythonPetit
+This is a growing collection of small programs written in Python.
 
 ## Catalogue
 ### Small Scripts
