@@ -8,33 +8,36 @@ __version__ = '0.0.2'
 import functools
 import sys
 
-Space = (32)
-Numerals = (48, 57)
+# Char Sets
+space = (32)
+numerals = (48, 57)
 
-Western_ranges = {
+western_ranges = {
     'LatinUpper': (65, 90),
     'LatinLower': (97, 122),
     'LatinSupplement': (192, 255)
 }
 # Latin Extended-A & -B, Esperanto ŭ et al in this blocks
-Western_codes = []
-for i, j in Western_ranges.values():
-    Western_codes += (list(range(i, j + 1)))
-Western_codes = [i for i in Western_codes if i not in [215, 247]]  # which are maths symbols
-Western_chars = [chr(code) for code in Western_codes]
+western_codes = []
+for i, j in western_ranges.values():
+    western_codes += (list(range(i, j + 1)))
+western_codes = [
+    i for i in western_codes if i not in [215, 247]
+]  # which are maths symbols
+western_chars = [chr(code) for code in western_codes]
 
-NonSpacing = {
+nonSpacing = {
     'Fullwidth': [i for i in '，。；「」：《》『』、[]（）*_'],
-    'MathsExpression': []
+    'MathsExpression': [chr(215), chr(247)]  # ':='
 }
-NonSpacing_chars = [char for chars in NonSpacing.values()]
+nonSpacing_chars = [char for char in nonSpacing.values()]
 
 
 def is_western(char: str) -> bool:
     '''
     Determine if char belongs to the western codes.
     '''
-    return char in Western_chars
+    return char in western_chars
 
 
 # for i in lis:
@@ -46,7 +49,7 @@ def is_nonspacing_class(char: str) -> bool:
     Determine if char belongs to the fullwidth codes.
     '''
     return not char.isspace() and \
-            not (char in NonSpacing_chars)
+           not (char in nonSpacing_chars)
 
 
 def apply_rules(pre, post):
