@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 # This scritp adds spaces to eastern(Chinese, Japanese, Korean [^1])-western(Latin, Cyrillic, Greek), according to the [guidelines](https://github.com/sparanoid/chinese-copywriting-guidelines).
 # [1]: https://en.wikipedia.org/wiki/List_of_Unicode_characters#East_Asian_writing_systems
 
@@ -27,6 +27,7 @@ NonSpacing = {
     'Fullwidth': [i for i in '，。；「」：《》『』、[]（）*_'],
     'MathsExpression': []
 }
+NonSpacing_chars = [char for chars in NonSpacing.values()]
 
 
 def is_western(char: str) -> bool:
@@ -45,7 +46,7 @@ def is_nonspacing_class(char: str) -> bool:
     Determine if char belongs to the fullwidth codes.
     '''
     return not char.isspace() and \
-            not (char in [codes for codes in NonSpacing.values()])
+            not (char in NonSpacing_chars)
 
 
 def apply_rules(pre, post):
