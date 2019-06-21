@@ -1,0 +1,35 @@
+#!/usr/bin/env wolframscript
+(* ::Package:: *)
+
+SetOptions[$FrontEnd,PrivateFontOptions->{"OperatorSubstitution"->False}]
+
+
+historical={Labeled[DateObject[{1911,10}],"Xinhai Revolution"],Labeled["1912","Republic of China founded"],Labeled[DateObject[{1912,02}],"Emperor Puyi declared abdication"],
+Labeled[DateObject[{1924}],"General Feng Yuxiang launched Beijing coup"],
+Labeled[DateObject[{1924,11,13}],"The Imperial family left the Forbidden City"],
+Labeled[DateObject[{1931}],"Mukden incident (Japan's Invasion to North-eastern China)"],
+Labeled[DateObject[{1937}],"Marco Polo Bridge Incident (Occupied Peiping)"],
+Labeled[DateObject[{1945,08,15}],"Surrender of Japan"],
+Labeled[DateObject[{1946}],"Chinese Civil War between KMT and CPC"],
+Labeled[DateObject[{1949,11}],"KMT's retreat to Taiwan"],
+Labeled[DateObject[{1949,10,01}],"People\[CloseCurlyQuote]s Republic of China founded"]
+};
+museum={Labeled[DateObject[{1913}],"The Exhibition Office of Ancient Artefacts founded"],
+Labeled[DateObject[{1914}],"The office mounted the first public exhibition of imperial art"],
+Labeled[DateObject[{1924}],"The Committee for Liquidation of the Qing household founded"],
+Labeled[DateObject[{1925}],"The Palace Museum founded and opened to the public"],
+Labeled[DateObject[{1931}],"Preparation for movement"],Labeled[Interval[{"1933","1947"}],"First movement of objects (North to South)"],
+Labeled[Interval[{DateObject[{1948,05(*12*),21}],DateObject[{1949, 01,29}]}],"Second movement of objects (Mainland to Taiwan)"],
+Labeled[DateObject[{1965}],"The National Palace Museum founded"]
+};
+
+
+Table[TimelinePlot[{historical,museum},
+ImageSize->{980,Automatic},
+AxesOrigin->origin,
+Spacings->Automatic,
+PlotLayout->"Packed",
+GridLines->Automatic,
+Filling->Axis,
+PlotLegends->Placed[{"Historical Events","Museum-related Events"},Bottom],
+PlotRange->{"1905","1970"}],{origin,{Center}}]
