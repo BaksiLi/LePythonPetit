@@ -8,7 +8,7 @@ This is a growing collection of small programs written in Python (mostly).
 - [Esperanto-English-Japanese-Etymology Dictionary](https://gist.github.com/BaksiLi/d4576e7bf3f40b2d98173bbd27dbc9a5): A combined dictionary.
 
 ### Projects
-- [Eastern-Western Typeset Formatter](./src/EWFormatter/ewformatter.py): An auto-formatter for mixed typesetting of East-Asian (Chinese Characters (Hanzi, Kanji, Hanja); Kana; Hangul) and Western (Greek; Latin; Cyrillic) elements.
+- [EWFormatter](./src/EWFormatter/ewformatter.py): An auto-formatter for mixed typesetting of East-Asian (Chinese Characters (Hanzi, Kanji, Hanja); Kana; Hangul) and Western (Greek; Latin; Cyrillic) elements.
 <!-- This is a part of my future linter project. -->
 
 - [AlfredWorkflows](https://github.com/BaksiLi/AlfredWorkflows): A repository of my own creations for the good companion Alfred on macOS.
