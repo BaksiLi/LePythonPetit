@@ -12,12 +12,12 @@ This is a growing collection of my Python scripts and projects.
 ## Visualization
 - Timeline: Draw a timeline from a list of events.
 	![Timeline Example](examples/Timeline.jpeg)
+- (2022) [Sex Activity Visualizer](https://github.com/BaksiLi/sex-stats): This analyzes statistics of logged sex activity data (Apple HealthKit).
+	![Example: sex-stats](https://github.com/BaksiLi/sex-stats/raw/main/assets/example-stats.png)
 
 - (2019) [OctoMouse Activity Visualizer](https://gist.github.com/BaksiLi/c138430c01cfc981efcbbb4c95846a68): Analyse your daily activities, data logged by [OctoMouse](http://konsomejona.github.io/OctoMouse/#support) on macOS.
 	![ActivityLog Example](examples/ActivityLog.jpeg)
 
 - (2020) [WakaTime Data Visualizer](https://gist.github.com/BaksiLi/d675b683ebaf9fe24a99447f7e1a32c0): Visualize WakaTime data to replace the official (free but ugly) pie chart.
-  ![Example: WakaTime, Language](https://user-images.githubusercontent.com/26314680/82164014-4baf6380-98a6-11ea-97d3-1545ddeb678a.jpg)
-  ![Example: WakaTime, editor](https://user-images.githubusercontent.com/26314680/82164082-c0829d80-98a6-11ea-8d28-b72178d88995.png)
-
-- (2022) [Sex Activity Visualizer](https://github.com/BaksiLi/sex-stats): This analyzes statistics of logged sex activity data (Apple HealthKit).
+	  ![Example: WakaTime, Language](https://user-images.githubusercontent.com/26314680/82164014-4baf6380-98a6-11ea-97d3-1545ddeb678a.jpg)
+	  ![Example: WakaTime, editor](https://user-images.githubusercontent.com/26314680/82164082-c0829d80-98a6-11ea-8d28-b72178d88995.png)
